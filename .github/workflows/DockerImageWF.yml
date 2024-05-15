@@ -1,13 +1,13 @@
-name: Build and Push Docker Image
+name: Build Docker Image
 on:  push:
     branches:      - main
 jobs:
-  build:    runs-on: ubuntu-latest
+  build:    runs-on: Linux
     steps:      - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Build Docker image        run: docker build -t 22026177grace/fyp_project .
-      - name: Tag Docker image
-        run: docker tag 22026177grace/fyp_project 22026177grace/fyp_project:v1.0
-      - name: Login to DockerHub        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - name: Login to Docker Hub        uses: docker/login-action@v2
+        with:          username: ${{ secrets.22026177grace }}
+          password: ${{ secrets.gI_3ul4-1934* }}
+      - name: Build Docker image        run: docker build -t your-image-name .
       - name: Push Docker image
-        run: docker push 22026177grace/fyp_project:v1.0
+        run: docker push your-image-name
