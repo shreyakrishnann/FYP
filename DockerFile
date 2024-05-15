@@ -1,0 +1,9 @@
+# Build the Docker image
+docker build -t 22026177grace/fyp_project .
+
+# Tag the Docker image
+docker tag 22026177grace/fyp_project 22026177grace/fyp_project:version1.0
+
+# Push the Docker image to DockerHub
+docker push 22026177grace/fyp_project:version1.0
+
