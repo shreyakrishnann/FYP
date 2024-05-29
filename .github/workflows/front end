@@ -1,16 +1,9 @@
-
 <!DOCTYPE html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="=" viewport" content="width=device-width, initial-scale=1">
-    
-</head>
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to EcoCoolSustain.com</title>
     <style>
@@ -42,13 +35,13 @@
             justify-content: center;
         }
 
-            .navbar a {
-                color: white;
-                text-decoration: none;
-                padding: 10px;
-                font-weight: bold;
-                margin: 0 10px;
-            }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-weight: bold;
+            margin: 0 10px;
+        }
 
         .section {
             display: none; /* Initially hide all sections */
@@ -65,15 +58,28 @@
             cursor: pointer;
         }
 
-            button:hover {
-                background-color: #0056b3;
-            }
+        button:hover {
+            background-color: #0056b3;
+        }
 
-        h1, h2, p {
+        .center-button {
+            display: flex;
+            justify-content: center;
+        }
+
+        h1, h2, h3, p {
             margin: 10px 0;
+        }
+
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
         }
     </style>
 </head>
+
 <body>
     <div class="header">
         <div class="navbar">
@@ -93,12 +99,14 @@
         <!-- Example Product -->
         <h3>Panasonic CS-PU9WKZ Air Conditioner</h3>
         <img src="https://th.bing.com/th/id/OIP.Qj4wcB2wOCOm6LzMRv7w6gHaFj?rs=1&pid=ImgDetMain" alt="Panasonic CS-PU9WKZ Air Conditioner">
-        <button onclick="toggleDetails('panasonic')">View Details</button>
+        <div class="center-button">
+            <button onclick="toggleDetails('panasonic')">View Details</button>
+        </div>
         <div id="panasonic" class="product-details" style="display:none;">
             <p><strong>Price:</strong> SGD698.00</p>
             <p><strong>Type:</strong> Split-type</p>
             <p><strong>Watts:</strong> 760W</p>
-            <p><strong>Air Flow Volume:</strong> 10.0 m�/min</p>
+            <p><strong>Air Flow Volume:</strong> 10.0 m³/min</p>
             <p><strong>Dimension:</strong> 779 x 290 x 209 mm</p>
             <p><strong>Features:</strong> Eco-friendly R32 refrigerant, Compact and efficient, Long airflow with a big flap</p>
             <p><strong>Cons:</strong> No easy-to-clean feature</p>
@@ -124,6 +132,6 @@
         // Optionally show the About section by default
         showSection('about'); // Comment this line if no section should be shown by default
     </script>
-
 </body>
+
 </html>
