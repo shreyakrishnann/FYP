@@ -10,4 +10,4 @@ jobs:
           password: ${{ secrets.gI_3ul4-1934* }}
       - name: Build Docker image        run: docker build -t docker .
       - name: Push Docker image
-        run: docker push your-image-name
+        run: docker push docker
