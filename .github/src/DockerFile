@@ -1,8 +1,23 @@
-# Build the Docker image
-docker build -t 22026177grace/fyp_project .
+# Use an official Node.js runtime as a parent image
+FROM node:14
 
-# Tag the Docker image
-docker tag 22026177grace/fyp_project 22026177grace/fyp_project:version1.0
+# Set the working directory
+WORKDIR /usr/src/app
 
-# Push the Docker image to DockerHub
-docker push 22026177grace/fyp_project:version1.0
+# Copy the package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Build the application
+RUN npm run build
+
+# Expose the application port
+EXPOSE 8080
+
+# Define the command to run the application
+CMD ["npm", "start"]
