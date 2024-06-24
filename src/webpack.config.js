@@ -1,10 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.js', // Ensure this path matches your directory structure
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'src/build')
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'build'),
   },
   module: {
     rules: [
@@ -13,11 +13,8 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ]
-  }
+        },
+      },
+    ],
+  },
 };
