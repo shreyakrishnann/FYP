@@ -35,7 +35,6 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_POLITE_PLANT_087A32C1E }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e., PR comments)
-          action: "upload"
           app_location: "src" # App source code path
           output_location: "src/build" # Built app content directory
 
