@@ -19,12 +19,16 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '20'
-          
+
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd src
+          npm install
 
       - name: Build project
-        run: npm run build
+        run: |
+          cd src
+          npm run build
 
   test:
     runs-on: ubuntu-latest
@@ -39,10 +43,14 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd src
+          npm install
 
       - name: Run tests
-        run: npm test
+        run: |
+          cd src
+          npm test
 
   scan:
     runs-on: ubuntu-latest
