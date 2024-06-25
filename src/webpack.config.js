@@ -1,20 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',  // Adjust the entry point to your project's structure
+  entry: '/FYP/src/index.js', // Ensure this path is correct relative to the webpack.config.js file
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'build'),
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'build'), // This should point to the build directory
   },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-    ],
-  },
+  mode: 'development', // or 'production'
 };
