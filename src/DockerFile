@@ -1,23 +1,23 @@
-# Use the official Node.js image from the Docker Hub
+# Use an official Node.js runtime as a parent image
 FROM node:14
 
-# Create and set the working directory
+# Set the working directory
 WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json
-COPY package.json ./
-COPY package-lock-json.5 ./
+COPY package*.json ./
 
+# Install dependencies
+RUN npm install
 
 # Copy the rest of the application code
 COPY . .
 
-# Connect to Azure Blob Storage
-ENV AZURE_STORAGE_CONNECTION_STRING=$connectionString
-
+# Build the app
+RUN npm run build
 
 # Expose the port the app runs on
 EXPOSE 3000
 
-# Command to run the application
-CMD ["node", "app.js"]
+# Define the command to run the app
+CMD ["npm", "start"]
