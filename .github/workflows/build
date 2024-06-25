@@ -1,0 +1,34 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20.14.0'
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: /home/runner/work/FYP/
+
+    - name: Build project with Webpack
+      run: npx webpack --config webpack.config.js
+      working-directory: /home/runner/work/FYP/
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: /home/runner/work/FYP/build/
