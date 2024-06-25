@@ -40,3 +40,11 @@ jobs:
           output_location: "src/build" # Built app content directory
 
   close_pull_request_job:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close pull request and delete branch
+        run: |
+          gh pr close ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --delete-branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
