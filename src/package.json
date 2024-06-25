@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    // List your actual runtime dependencies here, for example:
     "express": "^4.17.1"
   },
   "devDependencies": {
