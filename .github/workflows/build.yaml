@@ -21,14 +21,14 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-      working-directory: /home/runner/work/FYP/
+      working-directory: ./FYP
 
     - name: Build project with Webpack
       run: npx webpack --config webpack.config.js
-      working-directory: /home/runner/work/FYP/
+      working-directory: ./FYP
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v2
       with:
         name: build
-        path: /home/runner/work/FYP/build/
+        path: ./FYP/build/
