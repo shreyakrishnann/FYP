@@ -7,6 +7,11 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
   },
   mode: 'development',
+  resolve: {    
+    modules: [
+      path.resolve(__dirname, 'node_modules')
+    ]
+  },
   module: {
     rules: [
       {
