@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: 'home/runner/work/FYO/src/index.js',
+  entry: 'home/runner/work/FYP/src/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'build'),
