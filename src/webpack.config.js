@@ -7,6 +7,11 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
   },
   mode: 'development',
+  resolve: {
+    alias: {
+      '@src': path.resolve(__dirname, 'src'),
+    },
+  },
   module: {
     rules: [
       {
